@@ -39,7 +39,7 @@ namespace Services
 
         if (update == 1)
         {
-          System.Console.WriteLine($"atualizou a situação da proposta {propostaFila.Proposta} / Situação: {proposta.Situacao}");
+          System.Console.WriteLine($"atualizou a situação da proposta {propostaFila.Proposta} / Situação: {proposta.Situacao} / Obs: { proposta.Observacao}");
         }
       }
       catch (Exception e)

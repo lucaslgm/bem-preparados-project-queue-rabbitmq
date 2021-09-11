@@ -31,11 +31,12 @@ namespace Infrastructure.Repositories
     public static async Task<int> Update(E_Proposta obj)
     {
       string sqlQuery = "UPDATE [dbo].[TREINA_PROPOSTAS] SET SITUACAO = @situacao, DT_SITUACAO = @dt_situacao, " +
-      "DATA_ATUALIZACAO = @data_atualizacao WHERE PROPOSTA = @proposta;";
+      "OBSERVACAO = @observacao, DATA_ATUALIZACAO = @data_atualizacao WHERE PROPOSTA = @proposta;";
 
       DynamicParameters parameter = new DynamicParameters();
       parameter.Add("@proposta", obj.Proposta);
       parameter.Add("@situacao", obj.Situacao);
+      parameter.Add("@observacao", obj.Observacao);
       parameter.Add("@dt_situacao", DateTime.Today);
       parameter.Add("@data_atualizacao", DateTime.UtcNow);
 
